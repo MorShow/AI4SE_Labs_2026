@@ -5,17 +5,17 @@ For this task, I chose Precision, Recall, and F1-score as complements to exact-m
 The implementation compares the restaurant names returned by the generated SQL with the names in the reference result. Let $P$ be the list of predicted names and $G$ the list of reference names for one question. The per-question formulas are:
 
 $$
-\operatorname{Precision}(P,G)=
+\mathrm{Precision}(P,G)=
 \frac{\sum_{p\in P}\mathbf{1}[p\in G]}{|P|},
 \qquad
-\operatorname{Recall}(P,G)=
+\mathrm{Recall}(P,G)=
 \frac{\sum_{g\in G}\mathbf{1}[g\in P]}{|G|}.
 $$
 
 $$
 F_1(P,G)=
-\frac{2\,\operatorname{Precision}(P,G)\operatorname{Recall}(P,G)}
-{\operatorname{Precision}(P,G)+\operatorname{Recall}(P,G)}.
+\frac{2\,\mathrm{Precision}(P,G)\mathrm{Recall}(P,G)}
+{\mathrm{Precision}(P,G)+\mathrm{Recall}(P,G)}.
 $$
 
 Recall measures how many reference names were retrieved. Precision measures how many predicted names occur in the reference result. F1 is their harmonic mean.
