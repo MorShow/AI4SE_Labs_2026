@@ -1,0 +1,11 @@
+# Task 4
+
+Overall, CRISP stands out among the other prompting strategies. Even with a fairly weak local model, this technique helped us generate better SQL queries and achieve Accuracy of around 50 percent. The model was able to generate answers even for questions whose correct answers contained more than 10 rows from the database. Overall, this also highlights another main problem with our model: it could not handle long input questions or answers containing a very large number of output rows (that is, more complex SQL queries). It is quite possible that this is a problem with the chosen strategy of working with a local model rather than something more "intelligent", which might have given more variety in the answers.
+
+I was also surprised that ToT turned out to be the weakest. Breaking the task into subtrees and discarding unsuccessful options did not help the model, although I am fully convinced that my variants were written poorly and that I should have changed that prompt so the model would at least think longer about its SQL queries (since, in the end, it spent the least time on average with these prompts, which is why it got the lowest result on the dataset).
+
+On the other hand, we can see that CRISP clearly beat RACE after more constraints were added to the input and output. This is also connected with the fact that with CRISP the model spent considerably longer thinking (6 seconds versus 4 for the other techniques). Although with RACE the model answered correctly more often (there were not many such cases in our dataset) than with CRISP and ToT.
+
+But for input questions 101–200 characters long, the model with CRISP clearly outperformed the other prompting techniques and got its main Accuracy gain on exactly this kind of question, which returned 1–5 rows. You can see this in the report with its cool vibe-coded headings.
+
+Overall, the result is not especially stunning, and I did not get a noticeable difference from choosing a different prompting technique. I still attribute this to the weaknesses of the local model. Yet choosing CRISP did produce a noticeable improvement in the metrics. Nevertheless, I regret that I could not test ToT more thoroughly and use its full power. I think I could have achieved much better results with this technique.

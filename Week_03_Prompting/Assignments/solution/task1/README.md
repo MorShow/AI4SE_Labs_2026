@@ -1,0 +1,5 @@
+# Task 1
+
+I decided to choose two prompting techniques similar to CO-STAR or ROSES: CRISP and RACE. My main reason was that, among the huge number of different techniques, ChatGPT considered these the best for development (probably not a very reliable claim, but I decided to choose them anyway). Both require defining a role, the main goal, and the context. However, it seemed to me that CRISP focuses more on the characteristics of the input data and the constraints on the output, which gave me more confidence in the model's answers (and that is how it turned out in practice).
+
+The third configuration was different: Tree-of-Thoughts. I wanted to test this technique not only on problems like “count how many apples Janko Hraško had,” but on something more serious. The branching into subtasks was done in a strange way: “add extra JOINs in branches B or C compared with the first variant, which used no JOINs.” Unfortunately, this technique lacked details such as a “role” and so on. They could be added in practice, but I decided to keep the original version when working on the subsequent tasks.

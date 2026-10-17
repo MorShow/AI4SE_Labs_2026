@@ -1,0 +1,533 @@
+question,predicted_sql,total_time
+What is the best place in winters for tea food ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Tea' ORDER BY r.RATING DESC LIMIT 1;
+```",4.137419
+What is the best place in moraga for european food ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Moraga' AND r.FOOD_TYPE = 'European' ORDER BY r.RATING DESC LIMIT 1;
+```",3.997697
+What is the best place in eagan for egyptian food ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Egyptian' AND g.CITY_NAME = 'Eagan' ORDER BY r.RATING DESC LIMIT 1;
+```",3.909167
+What is the best place in atherton for burmese food ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Burmese' AND g.CITY_NAME = 'Atherton' ORDER BY r.RATING DESC LIMIT 1;
+```",3.845692
+"What is the best place in tahoe city for potatoes food, and I have not settled whether pasta belongs in a lunchbox or a flowerpot?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'potatoes' AND g.CITY_NAME = 'tahoe' ORDER BY r.RATING DESC LIMIT 1;
+```",4.412774
+What is the best californian in portola valley ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Portola Valley' AND r.FOOD_TYPE = 'Californian' ORDER BY r.RATING DESC LIMIT 1;
+```",4.270045
+"What is the best dim sum in santa rosa, and I still cannot decide whether soup or pie is the better breakfast?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%dim sum%' AND g.CITY_NAME = 'santa rosa' ORDER BY r.RATING DESC LIMIT 1;
+```",4.219940
+"On an unrelated menu question, I am torn between curry and apple pie, What is the best peruvian in crockett ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'curry' AND g.CITY_NAME = 'Crockett' ORDER BY r.RATING DESC LIMIT 1;
+```",4.101069
+What is the best eclectic in calistoga ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Eclectic' AND g.CITY_NAME = 'Calistoga' ORDER BY r.RATING DESC LIMIT 1;
+```",4.078970
+What is the best delivery in rio del mar ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'rio del mar' ORDER BY r.RATING DESC LIMIT 1;
+```",3.776031
+"While comparing dumplings with pancakes for an imaginary picnic, give me a restaurant on timber creek dr in san jose with a rating above 1.7 (poorly rated or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%dumplings%' AND r.NAME LIKE '%pancakes%' AND l.STREET_NAME = 'timber creek dr' AND g.CITY_NAME = 'san jose' AND r.RATING > 1.7;
+```",4.487570
+give me a restaurant on plaza way in lafayette with a rating above 1.8 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'plaza way' AND g.CITY_NAME = 'lafayette' AND r.RATING > 1.8;
+```",4.031511
+give me a restaurant on avenue near the alameda in belmont with a rating above 2.3 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME LIKE '%avenue%' AND l.CITY_NAME LIKE '%alameda%' AND l.CITY_NAME LIKE '%belmont%' AND r.RATING > 2.3;
+```",4.401121
+give me a restaurant on w evelyn ave ste 108 in sunnyvale with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE l.STREET_NAME = 'W EVELYN AVE' AND l.HOUSE_NUMBER = 108 AND r.CITY_NAME = 'SUNNYVALE' AND r.RATING > 2;
+```",4.137418
+give me a restaurant on san ignacio ave in san jose with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'San Ignacio Ave' AND g.CITY_NAME = 'San Jose' AND r.RATING > 1.7;
+```",4.072791
+where can i eat drive in food in palo alto ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Drive In' AND g.CITY_NAME = 'Palo Alto';
+```",3.874869
+where can i eat bar food in glen ellen ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Bar' AND g.CITY_NAME = 'Glen Ellen';
+```",3.718131
+where can i eat juice bar food in foster city ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Juice Bar' AND g.CITY_NAME = 'Foster City';
+```",3.808639
+where can i eat spanish food in oakland ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Spanish' AND g.CITY_NAME = 'Oakland';
+```",3.755842
+where can i eat swiss food in moss beach ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Swiss' AND g.CITY_NAME = 'Moss Beach';
+```",3.752898
+"what is a restaurant in forestville with a rating above 4.5 (excellent or better), though I am also choosing between noodles and a sandwich for a rainy picnic?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Forestville' AND r.RATING > 4.5 AND (r.FOOD_TYPE LIKE '%noodles%' OR r.FOOD_TYPE LIKE '%sandwich%')
+```",4.346837
+what is a restaurant in vallejo with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Vallejo' AND r.RATING > 2;
+```",4.129526
+what is a restaurant in alameda with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'alameda' AND r.RATING > 2;
+```",3.950309
+what is a restaurant in san juan bautista with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'San Juan Bautista' AND r.RATING > 4.5;
+```",4.446883
+"what is a restaurant in larkspur with a rating above 4.5 (excellent or better), and I am still weighing curry against apple pie for a trip to the moon?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Larkspur' AND r.RATING > 4.5;
+```",3.901412
+"A very long menu debate has occupied my afternoon: should a picnic feature warm noodles, cold muffins, or an elaborate tower of crackers, and would any of them pair well with a map of imaginary islands? what are some restaurants in oakland with a rating above 2 (below average or better)? This also reminds me of an unrelated menu puzzle involving pumpkin biscuits, chilled soup, and an imaginary picnic where every plate must be shared with a different stuffed animal.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.CITY_NAME = 'Oakland' AND r.RATING > 2;
+```",4.049885
+"what are some restaurants in vacaville with a rating above 2 (below average or better), while I wonder if dumplings or pancakes could help me find my misplaced umbrella?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Vacaillville' AND r.RATING > 2.0;
+```",3.816850
+what are some restaurants in alameda with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'alameda' AND r.RATING > 2;
+```",3.821893
+what are some restaurants in east palo alto with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'East Palo Alto' AND r.RATING > 2;
+```",3.801666
+what are some restaurants in santa cruz with a rating above 2.5 (average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'santa cruz' AND r.RATING > 2.5;
+```",4.035764
+what is a restaurant in brentwood with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Brentwood' AND r.RATING > 2;
+```",3.662045
+what is a restaurant in mill valley with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Mill Valley' AND r.RATING > 4.5;
+```",3.746856
+what is a restaurant in rio vista with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE r.CITY_NAME = 'Rio Vista' AND r.RATING > 2;
+```",3.737097
+what is a restaurant in rio del mar with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE r.CITY_NAME = 'Rio del Mar' AND r.RATING > 1.7;
+```",3.688199
+what is a restaurant in lafayette with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Lafayette' AND r.RATING > 2;
+```",3.823453
+where can i eat some mexican food on noriega in san francisco with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Mexican' AND l.STREET_NAME = 'Noriega' AND g.CITY_NAME = 'San Francisco' AND r.RATING > 2;
+```",4.129661
+where can i eat some vietnamese food on shellmound st # 12 in emeryville with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Vietnamese' AND l.STREET_NAME = 'Shellmound St' AND l.HOUSE_NUMBER = 12 AND g.CITY_NAME = 'Emeryville' AND r.RATING > 1.7;
+```",4.676018
+where can i eat some mexican food on persian dr in sunnyvale with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE = 'Mexican'
+  AND l.STREET_NAME = 'Persian Dr'
+  AND l.CITY_NAME = 'Sunnyvale'
+  AND r.RATING > 4.5;
+```",4.389444
+where can i eat some cafe food on el camino real in san bruno with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Cafe' AND l.CITY_NAME = 'San Bruno' AND g.CITY_NAME = 'San Bruno' AND r.RATING > 2;
+```",4.220217
+where can i eat some pizza food on hawkins st in hollister with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'pizza' AND l.STREET_NAME = 'hawkins st' AND g.CITY_NAME = 'hollister' AND r.RATING > 4.5;
+```",4.515246
+where is a restaurant on hillsdale mall in san mateo for ice cream food with a rating above 1.8 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Ice Cream' AND r.CITY_NAME = 'San Mateo' AND g.CITY_NAME = 'San Mateo' AND r.RATING > 1.8;
+```",4.196285
+where is a restaurant on st in sonoma for winery food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE = 'Winery'
+  AND l.STREET_NAME = 'st'
+  AND g.CITY_NAME = 'sonoma'
+  AND r.RATING > 1.7;
+```",4.687062
+where is a restaurant on hartz av in danville for cafe food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE l.STREET_NAME = 'Hartz Av'
+  AND r.CITY_NAME = 'Danville'
+  AND r.FOOD_TYPE = 'Cafe'
+  AND r.RATING > 2.0;
+```",4.543156
+where is a restaurant on othello dr in fremont for cafe food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'Othello Dr' AND r.FOOD_TYPE = 'Cafe' AND r.RATING > 1.7;
+```",4.010249
+where is a restaurant on n.shoreline blvd. in mountain view for sandwiches food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE l.STREET_NAME = 'n. shoreline blvd.'
+AND r.FOOD_TYPE = 'sandwiches'
+AND r.RATING > 2.0;
+```",4.195854
+where is a bakery restaurant on simms st in san rafael with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Bakery' AND l.STREET_NAME = 'Simms St' AND g.CITY_NAME = 'San Rafael' AND r.RATING > 1.7;
+```",4.464586
+where is a donuts restaurant on mission st in daly city with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Donuts' AND l.STREET_NAME = 'Mission St' AND l.CITY_NAME = 'Daly City' AND r.RATING > 1.7;
+```",4.281066
+where is a cafe restaurant on n san pedro st in san jose with a rating above 1.8 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Cafe' AND l.STREET_NAME = 'N San Pedro St' AND g.CITY_NAME = 'San Jose' AND r.RATING > 1.8;
+```",4.570431
+where is a japanese restaurant on broadway in burlingame with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Japanese' AND l.STREET_NAME = 'Broadway' AND g.CITY_NAME = 'Burlingame' AND r.RATING > 1.7;
+```",4.231060
+"where is a asian restaurant on castro st in mountain view with a rating above 2.8 (average or better), and I am still weighing curry against apple pie for a trip to the moon?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Asian' AND l.STREET_NAME = 'Castro St' AND g.CITY_NAME = 'Mountain View' AND r.RATING > 2.8;
+```",4.268453
+give me a restaurant on mission blvd in hayward for pizza food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%mission blvd%' AND l.CITY_NAME = 'hayward' AND r.FOOD_TYPE = 'pizza' AND r.RATING > 1.7;
+```",4.221593
+"give me a restaurant on san pablo ave # a in pinole for deli food with a rating above 2 (below average or better), though I am also choosing between noodles and a sandwich for a rainy picnic?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON r.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'San Pablo Ave' AND l.HOUSE_NUMBER = 1 AND r.FOOD_TYPE ILIKE '%deli%' AND r.RATING > 2.0;
+```",4.295922
+give me a restaurant on contra costa blvd ste a in pleasant hill for pizza food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%pizza%' AND g.CITY_NAME = 'Pleasant Hill' AND l.STREET_NAME = 'Contra Costa Blvd' AND l.HOUSE_NUMBER = 1 AND r.RATING > 2;
+```",4.418262
+"Thinking about snacks, I wonder whether a muffin or a burrito is easier to fold, give me a restaurant on ocean ave in san francisco for cafe food with a rating above 1.5 (poorly rated or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE LIKE '%cafe%' AND r.CITY_NAME = 'San Francisco' AND g.CITY_NAME LIKE '%ocean ave%' AND r.RATING > 1.5;
+```",4.219685
+"My unrelated culinary dilemma involves choosing between cinnamon toast, vegetable pie, and a bowl of rice for a pretend celebration, while a very serious committee of stuffed animals reviews the menu. give me a restaurant on 6th st in hayward for bar food with a rating above 1.7 (poorly rated or better)? On a completely separate note, I cannot settle whether blueberry dumplings or cinnamon toast would be a better offering at a fictional festival held on the far side of a very large armchair.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%bar%' AND g.CITY_NAME = 'Hayward' AND l.HOUSE_NUMBER = 6 AND r.RATING > 1.7;
+```",4.131825
+give me a donuts restaurant on mission blvd in fremont with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME = 'Donuts' AND l.STREET_NAME = 'Mission Blvd' AND g.CITY_NAME = 'Fremont' AND r.RATING > 1.7;
+```",4.576811
+"My unrelated culinary dilemma involves choosing between cinnamon toast, vegetable pie, and a bowl of rice for a pretend celebration, while a very serious committee of stuffed animals reviews the menu. I keep changing my mind about whether soup or toast is better company for a compass, give me a italian restaurant on clement in san francisco with a rating above 2 (below average or better)? This also reminds me of an unrelated menu puzzle involving pumpkin biscuits, chilled soup, and an imaginary picnic where every plate must be shared with a different stuffed animal.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Italian' AND l.STREET_NAME = 'Clement' AND l.CITY_NAME = 'San Francisco' AND r.RATING > 2;
+```",4.332471
+give me a cafe restaurant on clement in san francisco with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Cafe' AND r.CITY_NAME = 'San Francisco' AND g.CITY_NAME = 'Clement' AND r.RATING > 2;
+```",4.232988
+"A very long menu debate has occupied my afternoon: should a picnic feature warm noodles, cold muffins, or an elaborate tower of crackers, and would any of them pair well with a map of imaginary islands? give me a mexican restaurant on clayton rd apt 7 in concord with a rating above 1.7 (poorly rated or better)? Separately, I am still deciding whether a basket of roasted chickpeas, a stack of pear pancakes, or a bowl of noodles would make the most sensible snack for a journey that exists only on a kitchen calendar.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Mexican' AND l.HOUSE_NUMBER = 7 AND l.STREET_NAME = 'Clayton Rd' AND l.CITY_NAME = 'Concord' AND r.RATING > 1.7;
+```",4.565502
+give me a continental restaurant on south market st in san jose with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Continental' AND l.STREET_NAME = 'South Market St' AND g.CITY_NAME = 'San Jose' AND r.RATING > 2;
+```",4.542220
+"where are some restaurants for mexican food on ave. in mill valley with a rating above 2 (below average or better), while I wonder if dumplings or pancakes could help me find my misplaced umbrella?","```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE = 'Mexican'
+  AND l.STREET_NAME LIKE '%Ave%'
+  AND g.CITY_NAME = 'Mill Valley'
+  AND r.RATING > 2.0;
+```",4.416691
+"I cannot decide whether pasta belongs in a lunchbox or a flowerpot, where are some restaurants for chinese food on grand ave in south san francisco with a rating above 1.7 (poorly rated or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Chinese' AND l.STREET_NAME = 'Grand Ave' AND g.CITY_NAME = 'South San Francisco' AND r.RATING > 1.7;
+```",4.440060
+"I am still deciding whether a taco or a bowl of cereal suits a rainy day, where are some restaurants for mexican food on mill st in ben lomond with a rating above 2 (below average or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Mexican' AND l.STREET_NAME = 'Mill St' AND g.CITY_NAME = 'Ben Lomond' AND r.RATING > 2;
+```",4.373939
+"I am still deciding whether a taco or a bowl of cereal suits a rainy day, where are some restaurants for dessert food on candelero dr in walnut creek with a rating above 1.5 (poorly rated or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE LIKE '%dessert%' AND l.STREET_NAME = 'Candelero Dr' AND g.CITY_NAME = 'Walnut Creek' AND r.RATING > 1.5;
+```",4.611510
+where are some restaurants for american food on exp/riveroaks in san jose with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'American' AND l.CITY_NAME = 'San Jose' AND g.CITY_NAME = 'San Jose' AND r.RATING > 2;
+```",4.464421
+What is the lifes greates illusion?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r WHERE 0
+```",2.759955
+give me some restaurants in the monterey with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'monterey' AND r.RATING > 4.5;
+```",3.875173
+give me some restaurants in the sacramento area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME LIKE '%sacramento%' AND r.RATING > 2;
+```",3.944830
+give me some restaurants in the lake tahoe with a rating above 2.3 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME LIKE '%Lake Tahoe%' AND r.RATING > 2.3;
+```",3.655005
+"give me some restaurants in the napa valley with a rating above 2 (below average or better), and whether a taco or a bowl of cereal would make a better hat?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Napa Valley' AND r.RATING > 2;
+```",3.791897
+where can we find a restaurant on buchanan in seaside ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE l.STREET_NAME = 'buchanan' AND r.CITY_NAME = 'seaside'
+```",3.542487
+"I cannot decide whether pasta belongs in a lunchbox or a flowerpot, where can we find a restaurant on alvarado blvd in banta ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'Alvarado Blvd' AND g.CITY_NAME = 'Banta'
+```",4.017244
+"where can we find a restaurant on town and country vlg in campbell, while the menu leaves me wondering whether toast or soup can teach a compass to sing?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%campbell%' AND g.CITY_NAME LIKE '%campbell%' AND g.COUNTY LIKE '%vlg%'
+```",3.980887
+"While comparing dumplings with pancakes for an imaginary picnic, where can we find a restaurant on laurie meadows dr in orinda ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE l.STREET_NAME = 'Laurie Meadows Dr' AND r.CITY_NAME = 'Orinda';
+```",3.701956
+where can we find a restaurant on allston way in pacheco ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE l.STREET_NAME = 'Allston Way' AND g.CITY_NAME = 'Pacheco'
+```",3.815992
+"On an unrelated menu question, I am torn between curry and apple pie, where can we find some restaurants on e capitol expy # 104 in sonora ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%curry%' AND l.STREET_NAME LIKE '%e capitol expy%' AND l.HOUSE_NUMBER = 104 AND g.CITY_NAME LIKE '%sonora%'
+```",4.674943
+where can we find some restaurants on e. morehead in campbell ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'e morehead' AND g.COUNTY = 'campbell';
+```",4.158980
+where can we find some restaurants on w 25th ave in los altos ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE l.STREET_NAME = 'W 25th Ave' AND r.CITY_NAME = 'Los Altos';
+```",3.707400
+where can we find some restaurants on alvarado blvd in menlo park ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID WHERE l.STREET_NAME = 'Alvarado Blvd' AND r.CITY_NAME = 'Menlo Park';
+```",3.583079
+"A very long menu debate has occupied my afternoon: should a picnic feature warm noodles, cold muffins, or an elaborate tower of crackers, and would any of them pair well with a map of imaginary islands? where can we find some restaurants on scotts valley dr in concord ? Meanwhile, a hypothetical lunchbox committee is debating lentil pie, roasted pears, and tiny omelets, with no agreement about which one would travel best across an imaginary ocean.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%scotts valley dr%' AND l.CITY_NAME LIKE '%concord%'
+```",3.876571
+what is the best basque in the bay area ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Basque' AND g.CITY_NAME LIKE '%Bay Area%' ORDER BY r.RATING DESC LIMIT 1;
+```",3.992062
+"I cannot decide whether pasta belongs in a lunchbox or a flowerpot, what is the best lamb in the northern california ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'pasta' AND g.REGION = 'northern california' ORDER BY r.RATING DESC LIMIT 1;
+```",4.065325
+what is the best hoffbrau in the sacramento area ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Sacramento' ORDER BY r.RATING DESC LIMIT 1;
+```",3.889316
+"I cannot decide whether pasta belongs in a lunchbox or a flowerpot, what is the best yogurt in the yosemite and mono lake area ?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'pasta' AND g.CITY_NAME IN ('yosemite', 'mono lake') ORDER BY r.RATING DESC LIMIT 1;
+```",4.081616
+what is the best brunch in the napa valley ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Napa Valley' ORDER BY r.RATING DESC LIMIT 1;
+```",3.917506
+give me some restaurants in the los angeles area ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Los Angeles';
+```",3.862982
+give me some restaurants in the bay area ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION LIKE 'Bay Area';
+```",3.645967
+give me some restaurants in the unknown ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'unknown';
+```",3.719877
+give me some restaurants in the northern california ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Northern California';
+```",3.680565
+"give me some restaurants in the sacramento area, and I have not settled whether pasta belongs in a lunchbox or a flowerpot?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME LIKE '%sacramento%'
+```",3.645044
+where can i find a restaurant in the napa valley ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Napa Valley';
+```",3.724645
+where can i find a restaurant in the sacramento area ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Sacramento';
+```",3.645949
+where can i find a restaurant in the monterey ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Monterey';
+```",3.667312
+where can i find a restaurant in the lake tahoe ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Lake Tahoe'
+```",3.701104
+where can i find a restaurant in the yosemite and mono lake area ?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE g.CITY_NAME IN ('Yosemite', 'Mono Lake')
+;
+```",4.005902
+what are some places in the bay area for ethiopian food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Ethiopian' AND r.RATING > 2.0;
+```",4.074104
+"Thinking about snacks, I wonder whether a muffin or a burrito is easier to fold, what are some places in the los angeles area for indian food with a rating above 3 (good or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE ILIKE '%muffin%' OR r.FOOD_TYPE ILIKE '%burrito%' AND g.CITY_NAME LIKE '%los angeles%' AND r.RATING > 3.0;
+```",4.643535
+what are some places in the bay area for moroccan food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Moroccan' AND r.RATING > 2.0 AND g.CITY_NAME LIKE '%Bay Area%';
+```",4.194537
+what are some places in the northern california for italian food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Northern California' AND r.FOOD_TYPE = 'Italian' AND r.RATING > 2;
+```",4.201917
+what are some places in the monterey for bar food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Monterey' AND r.FOOD_TYPE LIKE '%Bar%' AND r.RATING > 1.7;
+```",4.151295
+give me a restaurant in the monterey for swiss food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Swiss' AND g.CITY_NAME = 'Monterey' AND r.RATING > 2.0;
+```",4.256088
+give me a restaurant in the bay area for american food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'American' AND r.RATING > 2.0 AND g.REGION LIKE '%Bay Area%';
+```",4.176440
+"give me a restaurant in the bay area for greek food with a rating above 4.5 (excellent or better), while the menu leaves me wondering whether toast or soup can teach a compass to sing?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Greek' AND r.RATING > 4.5 AND g.REGION LIKE '%Bay Area%'
+```",4.163751
+give me a restaurant in the bay area for dinner food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION LIKE 'Bay Area' AND r.FOOD_TYPE = 'Dinner' AND r.RATING > 2;
+```",4.019944
+give me a restaurant in the napa valley for ice cream food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Napa Valley' AND r.FOOD_TYPE = 'Ice Cream' AND r.RATING > 1.7;
+```",4.234119
+give me a latin restaurant in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Latin' AND g.REGION = 'Bay Area' AND r.RATING > 2;
+```",4.150179
+give me a dinner restaurant in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION LIKE 'Bay Area' AND r.RATING > 2;
+```",3.845553
+"While I debate whether soup or pie makes a better breakfast, give me a bar restaurant in the napa valley with a rating above 2 (below average or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'soup' OR r.FOOD_TYPE = 'pie' AND g.REGION = 'napa valley' AND r.RATING > 2;
+```",4.371016
+give me a bulgarian restaurant in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.REGION = 'Bay Area' AND g.CITY_NAME LIKE '%Bulgarian%' AND r.RATING > 2;
+```",4.179492
+give me a german restaurant in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'German' AND g.REGION = 'Bay Area' AND r.RATING > 2.0;
+```",4.223151
+where are some restaurants for nouveau food in the bay area with a rating above 3.5 (very good or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'nouveau' AND g.REGION = 'bay area' AND r.RATING > 3.5;
+```",4.208896
+"I keep changing my mind about whether soup or toast is better company for a compass, where are some restaurants for californian food in the napa valley with a rating above 2.3 (below average or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE LIKE '%californian%' AND g.REGION = 'Napa Valley' AND r.RATING > 2.3;
+```",4.212375
+where are some restaurants for dessert food in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Dessert' AND g.REGION = 'Bay Area' AND r.RATING > 2;
+```",4.194398
+where are some restaurants for hunan food in the bay area with a rating above 3 (good or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Hunan' AND g.CITY_NAME LIKE '%Bay Area%' AND r.RATING > 3.0;
+```",4.271424
+where are some restaurants for vietnamese/louisiana food in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE ILIKE '%vietnamese%' OR r.FOOD_TYPE ILIKE '%louisiana%'
+  AND g.CITY_NAME IN (SELECT CITY_NAME FROM GEOGRAPHIC WHERE CITY_NAME ILIKE '%bay area%')
+  AND r.RATING > 2.0;
+```",5.224855
+where can i eat some breakfast food in the bay area with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE = 'Breakfast'
+AND r.RATING > 2.0
+AND g.REGION = 'Bay Area';
+```",4.251952
+"Thinking about snacks, I wonder whether a muffin or a burrito is easier to fold, where can i eat some swiss food in the monterey with a rating above 2 (below average or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE ILIKE '%muffin%' OR r.FOOD_TYPE ILIKE '%burrito%' AND g.CITY_NAME = 'monterey' AND r.RATING > 2;
+```",4.596574
+"where can i eat some venison food in the bay area with a rating above 2 (below average or better), and I still cannot decide whether soup or pie is the better breakfast?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Venison' AND g.REGION = 'Bay Area' AND r.RATING > 2.0;
+```",4.240519
+"where can i eat some pizza food in the bay area with a rating above 2 (below average or better), and I still cannot decide whether soup or pie is the better breakfast?","```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.FOOD_TYPE = 'pizza'
+AND r.RATING > 2.0
+AND g.REGION = 'bay area';
+```",4.344021
+where can i eat some ice cream food in the monterey with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Ice Cream' AND g.CITY_NAME = 'Monterey' AND r.RATING > 1.7;
+```",4.309125
+give me some yogurt restaurants in santa rosa with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Yogurt' AND g.CITY_NAME = 'Santa Rosa' AND r.RATING > 1.7;
+```",4.439039
+"I have been comparing the merits of lentil soup, roasted pears, and tiny pancakes for a fictional train journey, and still cannot decide which snack would best accompany a collection of mismatched teacups. I am still deciding whether a taco or a bowl of cereal suits a rainy day, give me some california restaurants in mill valley with a rating above 2 (below average or better)? Meanwhile, a hypothetical lunchbox committee is debating lentil pie, roasted pears, and tiny omelets, with no agreement about which one would travel best across an imaginary ocean.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE ILIKE '%lentil soup%' OR r.FOOD_TYPE ILIKE '%roasted pears%' OR r.FOOD_TYPE ILIKE '%tiny pancakes%' AND g.CITY_NAME = 'Mill Valley' AND r.RATING > 2;
+```",5.343244
+"I have been comparing the merits of lentil soup, roasted pears, and tiny pancakes for a fictional train journey, and still cannot decide which snack would best accompany a collection of mismatched teacups. Thinking about snacks, I wonder whether a muffin or a burrito is easier to fold, give me some cafe restaurants in richmond with a rating above 2 (below average or better)? Separately, I am still deciding whether a basket of roasted chickpeas, a stack of pear pancakes, or a bowl of noodles would make the most sensible snack for a journey that exists only on a kitchen calendar.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Richmond' AND r.FOOD_TYPE ILIKE '%soup%' OR r.FOOD_TYPE ILIKE '%pear%' OR r.FOOD_TYPE ILIKE '%pancake%' AND r.RATING > 2;
+```",4.978562
+give me some sandwiches restaurants in walnut creek with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Walnut Creek' AND r.RATING > 2;
+```",4.016264
+give me some cafe restaurants in yountville with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Cafe' AND g.CITY_NAME = 'Yountville' AND r.RATING > 2.0;
+```",4.317405
+give me some places for catering in vallejo with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'Vallejo' AND r.RATING > 1.7;
+```",4.059630
+"On a separate food note, I cannot choose between noodles and a sandwich, give me some places for chinese in pacheco with a rating above 4.5 (excellent or better)?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Chinese' AND g.CITY_NAME = 'Pacheco' AND r.RATING > 4.5;
+```",4.281659
+give me some places for chinese in petaluma with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Chinese' AND g.CITY_NAME = 'Petaluma' AND r.RATING > 2.0;
+```",4.238031
+give me some places for burgers in los altos with a rating above 1.4 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Burger' AND g.CITY_NAME = 'Los Altos' AND r.RATING > 1.4;
+```",4.310160
+give me some places for american in san francisco with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'American' AND g.CITY_NAME = 'San Francisco' AND r.RATING > 2.0;
+```",4.220649
+where is a thai in unknown with a rating above 2.7 (average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Thai' AND r.RATING > 2.7;
+```",3.934326
+"My unrelated culinary dilemma involves choosing between cinnamon toast, vegetable pie, and a bowl of rice for a pretend celebration, while a very serious committee of stuffed animals reviews the menu. On a separate food note, I cannot choose between noodles and a sandwich, where is a chinese in saratoga with a rating above 1.7 (poorly rated or better)? This also reminds me of an unrelated menu puzzle involving pumpkin biscuits, chilled soup, and an imaginary picnic where every plate must be shared with a different stuffed animal.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%noodles%' AND g.CITY_NAME = 'saratoga' AND r.RATING > 1.7;
+```",4.267862
+where is a haitian in emeryville with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Haitian' AND l.CITY_NAME = 'Emeryville' AND r.RATING > 4.5;
+```",4.256988
+where is a mexican in ben lomond with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Mexican' AND g.CITY_NAME = 'Ben Lomond' AND r.RATING > 2;
+```",4.216151
+"where is a french in emeryville with a rating above 2 (below average or better), and I have not settled whether pasta belongs in a lunchbox or a flowerpot?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'French' AND l.CITY_NAME = 'Emeryville' AND r.RATING > 2.0;
+```",4.605080
+"where is a restaurant in san carlos for bread food with a rating above 1.8 (poorly rated or better), and I am still weighing curry against apple pie for a trip to the moon?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME LIKE '%Bread%' AND r.FOOD_TYPE LIKE '%Bread%' AND r.CITY_NAME LIKE '%San Carlos%' AND r.RATING > 1.8;
+```",4.323717
+where is a restaurant in antioch for thai food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Thai' AND r.RATING > 2.0 AND g.CITY_NAME = 'Antioch'
+```",4.150090
+where is a restaurant in moraga for ice cream food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Ice Cream' AND g.CITY_NAME = 'Moraga' AND r.RATING > 1.7;
+```",4.078391
+where is a restaurant in fairfield for donuts food with a rating above 4.5 (excellent or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'donuts' AND g.CITY_NAME = 'fairfield' AND r.RATING > 4.5;
+```",4.192183
+where is a restaurant in milpitas for vietnamese food with a rating above 3.3 (good or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.CITY_NAME = 'Milpitas' AND r.FOOD_TYPE = 'Vietnamese' AND r.RATING > 3.3;
+```",4.260845
+what are some restaurants in san lorenzo for french food with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'French' AND r.RATING > 1.7 AND g.CITY_NAME = 'San Lorenzo';
+```",4.201008
+what are some restaurants in berkeley for mexican food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Mexican' AND r.RATING > 2.0 AND g.CITY_NAME = 'Berkeley'
+```",4.285169
+what are some restaurants in sunnyvale for afghani food with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.CITY_NAME = 'Sunnyvale' AND r.FOOD_TYPE = 'Afghan' AND r.RATING > 2.0;
+```",4.348426
+"While planning a completely hypothetical feast, I keep weighing pumpkin soup against blueberry dumplings and wondering whether a pocket-sized omelet would be practical for a voyage across a carpeted ocean. what are some restaurants in alameda for burgers food with a rating above 2 (below average or better)? Meanwhile, a hypothetical lunchbox committee is debating lentil pie, roasted pears, and tiny omelets, with no agreement about which one would travel best across an imaginary ocean.","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE g.CITY_NAME = 'alameda' AND r.FOOD_TYPE LIKE '%burger%' AND r.RATING > 2.0;
+```",4.504516
+what are some restaurants in aptos for barbeque food with a rating above 1.8 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Barbeque' AND r.RATING > 1.8 AND g.CITY_NAME = 'Aptos';
+```",4.243728
+give me some steak restaurants in morgan hill with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Steak' AND g.CITY_NAME = 'Morgan Hill' AND r.RATING > 2.0;
+```",4.313341
+give me some coffee restaurants in castro valley with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Coffee' AND g.CITY_NAME = 'Castro Valley' AND r.RATING > 2.0;
+```",4.187803
+"give me some spanish restaurants in san jose with a rating above 2 (below average or better), while the menu leaves me wondering whether toast or soup can teach a compass to sing?","```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Spanish' AND g.CITY_NAME = 'San Jose' AND r.RATING > 2;
+```",4.256849
+give me some american restaurants in hollister with a rating above 2 (below average or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'American' AND g.CITY_NAME = 'Hollister' AND r.RATING > 2.0;
+```",4.294503
+give me some seafood restaurants in napa with a rating above 1.7 (poorly rated or better)?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.FOOD_TYPE = 'Seafood' AND g.COUNTY = 'Napa' AND r.RATING > 1.7;
+```",4.490276
+"where is burger pit steak house in campbell, and I have not settled whether pasta belongs in a lunchbox or a flowerpot?","```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.NAME = 'Burger Pit Steak House'
+AND g.CITY_NAME = 'Campbell'
+;
+```",4.016247
+where is roof top cafe in palo alto ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME = 'Roof Top Cafe' AND g.CITY_NAME = 'Palo Alto';
+```",4.008434
+"where is azteca de oro restaurant in castroville, and I am still weighing curry against apple pie for a trip to the moon?","```sql
+SELECT r.NAME
+FROM RESTAURANT AS r
+JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID
+JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME
+WHERE r.NAME = 'Azteca de Oro' AND g.CITY_NAME = 'Castroville';
+```",4.109607
+where is marys pizza shack in san ramon ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME = 'Marys Pizza Shack' AND g.CITY_NAME = 'San Ramon';
+```",4.035544
+where is bavarian corner in la honda ?,"```sql
+SELECT r.NAME FROM RESTAURANT AS r JOIN LOCATION AS l ON r.ID = l.RESTAURANT_ID JOIN GEOGRAPHIC AS g ON l.CITY_NAME = g.CITY_NAME WHERE r.NAME = 'Bavarian Corner' AND g.CITY_NAME = 'La Honda';
+```",4.124487
