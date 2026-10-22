@@ -67,12 +67,3 @@ Defaults: `gpt-4.1-nano` for extraction, `gpt-5-mini` for consolidation and arch
 [main.py](./main.py) starts the pipeline; [workflow.py](./reqflow/workflow.py) defines
 the graph; [prompts/](./prompts) contains agent instructions.
 The assignment's design explanation is in [report.md](./report.md).
-
-Focused offline verification:
-
-```powershell
-python -m unittest discover -s tests -v
-```
-
-The checks cover severity thresholds, the feedback/output flow, failed review, paraphrased evidence
-and complete overall-priority coverage. Real-model quality requires a run with an API key.
