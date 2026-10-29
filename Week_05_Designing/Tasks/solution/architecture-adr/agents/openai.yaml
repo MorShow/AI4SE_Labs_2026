@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture and ADR"
+  short_description: "Compare architectures and draft concise ADRs"
+  default_prompt: "Use $architecture-adr to clarify these requirements, compare three architectures, and draft a concise ADR for the selected option."
