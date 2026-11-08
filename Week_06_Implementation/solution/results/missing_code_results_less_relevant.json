@@ -1,0 +1,72 @@
+[
+  {
+    "file": "playground/playground/enums.py",
+    "class": "OrderStatus",
+    "method": "is_terminal",
+    "docstring": "    \"\"\"True when the status ends further transitions.\"\"\"",
+    "code_result": "@property\ndef is_terminal(self) -> bool:\n    \"\"\"True when the status ends further transitions.\"\"\"\n    return self in (OrderStatus.SHIPPED, OrderStatus.CANCELLED)\n"
+  },
+  {
+    "file": "playground/playground/inventory.py",
+    "class": "InventoryLedger",
+    "method": "__contains__",
+    "docstring": "        \"\"\"Return whether ``sku`` normalises to a SKU with positive on-hand stock.\"\"\"",
+    "code_result": "def __contains__(self, sku: object) -> bool:\n        \"\"\"Return whether ``sku`` normalises to a SKU with positive on-hand stock.\"\"\"\n        try:\n            normalized_sku = normalize_sku(sku)\n        except (TypeError, ValueError):\n            return False\n        return self._on_hand.get(normalized_sku, 0) > 0\n"
+  },
+  {
+    "file": "playground/playground/inventory.py",
+    "class": "Warehouse",
+    "method": "stock_report",
+    "docstring": "        \"\"\"Return a mapping of SKU to available quantity.\"\"\"",
+    "code_result": "def stock_report(self) -> Dict[str, int]:\n    \"\"\"Return a mapping of SKU to available quantity.\"\"\"\n    return {sku: self._ledger.available(sku) for sku in self._ledger}\n"
+  },
+  {
+    "file": "playground/playground/orders.py",
+    "class": "OrderStateMachine",
+    "method": "transition",
+    "docstring": "        \"\"\"Return ``target`` if the transition is allowed, else raise.\"\"\"",
+    "code_result": "def transition(self, source: OrderStatus, target: OrderStatus) -> OrderStatus:\n    \"\"\"Return ``target`` if the transition is allowed, else raise.\"\"\"\n    allowed = self.allowed_from(source)\n    if not isinstance(target, OrderStatus):\n        raise TypeError(\"target must be OrderStatus\")\n    if target not in allowed:\n        raise InvalidTransitionError(source, target)\n    return target\n"
+  },
+  {
+    "file": "playground/playground/orders.py",
+    "class": "OrderLog",
+    "method": "by_status",
+    "docstring": "        \"\"\"Yield orders whose status matches ``status``.\"\"\"",
+    "code_result": "def by_status(self, status: OrderStatus) -> Iterator[Order]:\n    \"\"\"Yield orders whose status matches ``status``.\"\"\"\n    for order in self._orders:\n        if order.status == status:\n            yield order\n"
+  },
+  {
+    "file": "playground/playground/models.py",
+    "class": "Customer",
+    "method": "can_afford",
+    "docstring": "        \"\"\"Return True if ``balance + total`` does not exceed the credit limit.\"\"\"",
+    "code_result": "def can_afford(self, total: Money) -> bool:\n        \"\"\"Return True if ``balance + total`` does not exceed the credit limit.\"\"\"\n        if not isinstance(total, Money):\n            raise TypeError(\"total must be Money\")\n        return not self._credit_limit < self._balance + total\n"
+  },
+  {
+    "file": "playground/playground/orders.py",
+    "class": "Order",
+    "method": "__len__",
+    "docstring": "        \"\"\"Return the number of line items.\"\"\"",
+    "code_result": "def __len__(self) -> int:\n    \"\"\"Return the number of line items.\"\"\"\n    return len(self._items)\n"
+  },
+  {
+    "file": "playground/playground/pricing.py",
+    "class": "BulkDiscountPricing",
+    "method": "price",
+    "docstring": "        \"\"\"Return the base price, less the discount if the quantity qualifies.\"\"\"",
+    "code_result": "def price(self, items: Sequence[LineItem]) -> Money:\n    \"\"\"Return the base total, discounted when the combined quantity meets the threshold.\"\"\"\n    total = self._base.price(items)\n    quantity = sum(item.quantity for item in items)\n    if quantity < self._threshold or self._percent_off == 0:\n        return total\n    return Money(total.amount * (100 - self._percent_off) // 100)\n"
+  },
+  {
+    "file": "playground/playground/events.py",
+    "class": "EventBus",
+    "method": "__contains__",
+    "docstring": "        \"\"\"Return whether any handlers are registered for ``event_type``.\"\"\"",
+    "code_result": "def __contains__(self, event_type: object) -> bool:\n    \"\"\"Return whether any handlers are registered for ``event_type``.\"\"\"\n    return isinstance(event_type, EventType) and bool(self._handlers.get(event_type))\n"
+  },
+  {
+    "file": "playground/playground/models.py",
+    "class": "Money",
+    "method": "__bool__",
+    "docstring": "        \"\"\"Return True when the amount is non-zero.\"\"\"",
+    "code_result": "def __bool__(self) -> bool:\n        \"\"\"Return True when the amount is non-zero.\"\"\"\n        return self._cents != 0\n"
+  }
+]
