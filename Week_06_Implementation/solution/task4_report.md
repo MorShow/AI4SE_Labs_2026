@@ -3,7 +3,7 @@
 Here, I decided to follow a common retrieval practice and select chunks not only by how relevant they are to the input query, but also by how different they are from each other. For this, I used MMR (Maximal Marginal Relevance), which balances relevance to the query against redundancy among the selected chunks. I measured relevance using cosine similarity, which compares the directions of two embedding vectors. For redundancy, I used overlap: the maximum cosine similarity between a candidate chunk and any chunk already selected. In my implementation, negative similarities are treated as zero overlap. The MMR score is:
 
 $$
-\operatorname{MMR}(c) = \lambda\,\operatorname{cos}(q,c) - (1-\lambda)\,\underbrace{\max\left(\{0\} \cup \{\operatorname{cos}(c,s) : s \in S\}\right)}_{\operatorname{overlap}(c,S)}.
+\mathrm{MMR}(c) = \lambda\,\cos(q,c) - (1-\lambda)\,\underbrace{\max\left(\{0\} \cup \{\cos(c,s) : s \in S\}\right)}_{\mathrm{overlap}(c,S)}.
 $$
 
 Here, $q$ is the query embedding, $c$ is a candidate chunk embedding, and $S$ is the set of chunks already selected. A higher $\lambda$ gives more weight to relevance; a lower value gives more weight to diversity. I used $\lambda = 0.2$ to put a stronger emphasis on reducing redundancy within the relevant candidate pool.
