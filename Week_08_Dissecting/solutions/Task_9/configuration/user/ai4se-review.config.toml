@@ -1,0 +1,4 @@
+# AI4SE code review profile
+model = "gpt-6.2-sol"
+model_reasoning_effort = "high"
+model_verbosity = "medium"

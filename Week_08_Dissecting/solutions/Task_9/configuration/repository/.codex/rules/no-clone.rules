@@ -1,0 +1,14 @@
+# Prevent the assistant from cloning repositories while working in this project.
+prefix_rule(
+    pattern = ["git", "clone"],
+    decision = "forbidden",
+    justification = "Cloning repositories is prohibited in this coursework project.",
+    match = [
+        "git clone https://example.com/team/project.git",
+        "git clone https://example.com/team/project.git vendor/project",
+    ],
+    not_match = [
+        "git status",
+        "git fetch",
+    ],
+)

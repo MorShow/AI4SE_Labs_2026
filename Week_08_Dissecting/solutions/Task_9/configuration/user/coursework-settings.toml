@@ -1,0 +1,9 @@
+# Coursework settings extracted from %USERPROFILE%/.codex/config.toml.
+# Replace path placeholders with local paths before running.
+
+[features]
+multi_agent = true
+
+[mcp_servers.ai4se-word-counter]
+command = "uv"
+args = ["run", "--python", "<PYTHON_EXECUTABLE>", "--script", "<REPOSITORY_ROOT>\\Week_08_Dissecting\\solutions\\Task_7\\server.py"]
