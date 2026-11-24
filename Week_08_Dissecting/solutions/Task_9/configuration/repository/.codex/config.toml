@@ -1,0 +1,3 @@
+# Codex settings for AI4SE Labs.
+
+model_instructions_file = "model-instructions.md"

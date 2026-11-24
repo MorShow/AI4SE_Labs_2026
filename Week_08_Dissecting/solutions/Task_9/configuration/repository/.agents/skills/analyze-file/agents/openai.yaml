@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze File"
+  short_description: "Explain files with context. Use always when user expects some file explanation and don't asks for deeper dives."
+  default_prompt: "Use $analyze-file to explain the specified file with a brief introduction, five short main bullet points, and brief closing context."
